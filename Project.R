@@ -6,6 +6,7 @@ csums <- colSums(is.na(data))
 cs <- (csums == 0)
 data <- data[, (colSums(is.na(data)) == 0)]
 
+#Deleting additional unnecessary columns from the training dataset
 trainIndex <- createDataPartition(y = data$classe, p=0.2,list=FALSE)
 traindata <- data[trainIndex,]
 removeIndex <- grep("timestamp|X|user_name|new_window",names(traindata))
