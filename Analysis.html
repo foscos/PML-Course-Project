@@ -4,7 +4,7 @@ First of all, I Call the 'predict' function to applie cross validation to the da
 Using the 'confusionMatrix' function we can see how well the model predicted the values in the dataset.
 To do that, we use a data partition of the training dataset
 
-
+-------------------------------------------------------
 test <- predict(modFit, traindata)
 confus <- confusionMatrix(traindata$classe, test)
 confus$table
@@ -18,7 +18,7 @@ Prediction    A    B    C    D    E
          D    1    0   41  921    1
          E    0    5    6    4 1067
 
-
+--------------------------------------------------------
 
 Now we can use the 'postresample' function to see the accuracy of the model. In this case we have a really good accuracy (0.978)
 
