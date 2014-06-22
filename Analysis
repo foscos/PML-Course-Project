@@ -1,0 +1,334 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+pre
+	{mso-style-link:"HTML con formato previo Car";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+span.HTMLconformatoprevioCar
+	{mso-style-name:"HTML con formato previo Car";
+	mso-style-link:"HTML con formato previo";
+	font-family:"Courier New";}
+span.nt
+	{mso-style-name:nt;}
+span.na
+	{mso-style-name:na;}
+span.err
+	{mso-style-name:err;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ES>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>In
+this file there are some parameters or reference values to classify and analyse
+the output of the predictive algorithm.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>First
+of all, I Call the 'predict' function to applie cross validation to the
+datatest. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>Using
+the 'confusionMatrix' function we can see how well the model predicted the
+values in the dataset.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>To do
+that, we use a data partition of the training dataset</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>-------------------------------------------------------</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>test </span><span
+style='font-size:7.0pt;font-family:Consolas;color:navy'>&lt;-</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>predict</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>(</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>modFit</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>,</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>traindata</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>confus</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>&lt;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>-</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>confusionMatrix</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>(</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>traindata</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>$</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>classe</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>,</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>test</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>confus</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>$</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>table</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>Reference</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>Prediction</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>A</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>B</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>C</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>D</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>E</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>A</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1669</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>5</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>B</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>   </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>19</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1107</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>   </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>10</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>2</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>C</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>5</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>   </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>15</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>  </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>992</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>9</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>5</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>D</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>   </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>41</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>  </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>921</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>E</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>5</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>6</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'>    </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>4</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>1067</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>--------------------------------------------------------</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>Now</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>we</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>can</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>use</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>the</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>'</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>postresample</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>'</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>function</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>to</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>see</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>the</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>accuracy</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>of</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>the</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>model</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>.</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>In</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>this</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>case</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>we</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>have</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>a</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>really</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>good</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>accuracy</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>(</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>0</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>.</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>978</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:teal'>accur</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>&lt;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>-</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>postResample</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>(</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>traindata</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>$</span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>classe</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>,</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> </span><span
+style='font-size:7.0pt;font-family:Consolas;color:teal'>test</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#A61717'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:navy'>&gt;</span><span
+style='font-size:7.0pt;font-family:Consolas;color:#333333'> accur[[1]]</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>[1]
+0.9780799</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>And
+finally, we can see the estimated output error of our model. In this case it is
+2,1%</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>&gt;
+error</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+10.8pt'><span style='font-size:7.0pt;font-family:Consolas;color:#333333'>[1]
+0.02192014</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
