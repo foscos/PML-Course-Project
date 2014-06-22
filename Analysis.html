@@ -1,0 +1,36 @@
+In this file there are some parameters or reference values to classify and analyse the output of the predictive algorithm.
+
+First of all, I Call the 'predict' function to applie cross validation to the datatest. 
+Using the 'confusionMatrix' function we can see how well the model predicted the values in the dataset.
+To do that, we use a data partition of the training dataset
+
+----------------------------------------------------------- 
+test <- predict(modFit, traindata)
+confus <- confusionMatrix(traindata$classe, test)
+confus$table
+
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1669    5    0    0    0
+         B   19 1107   10    1    2
+         C    5   15  992    9    5
+         D    1    0   41  921    1
+         E    0    5    6    4 1067
+
+-------------------------------------------------------------
+
+Now we can use the 'postresample' function to see the accuracy of the model. In this case we have a really good accuracy (0.978)
+
+
+accur <- postResample(traindata$classe, test)
+> accur[[1]]
+[1] 0.9780799
+
+
+And finally, we can see the estimated output error of our model. In this case it is 2,1%
+> error
+[1] 0.02192014
+
+
+
